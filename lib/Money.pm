@@ -10,7 +10,7 @@ has 'amount' => (
 );
 
 method equals (Money $object) {
-    return 1 if $self->amount == ${object}->amount;
+    return 1 if (($self->amount == ${object}->amount) && (ref $self eq ref $object));
     return 0;
 }
 
