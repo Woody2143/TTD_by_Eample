@@ -1,4 +1,5 @@
 package Dollar;
+use Modern::Perl;
 use Moose;
 use MooseX::Method::Signatures;
 use MooseX::Privacy;
@@ -6,7 +7,7 @@ use MooseX::Privacy;
 extends 'Money';
 
 method times (Int $multiplier) {
-    return Dollar->new( amount => ($self->amount * ${multiplier}));
+    return Dollar->new( amount => ($self->amount * $multiplier) );
 }
 
 no Moose;

@@ -10,8 +10,12 @@ has 'amount' => (
 );
 
 method equals (Money $object) {
-    return 1 if (($self->amount == ${object}->amount) && (ref $self eq ref $object));
+    return 1 if (($self->amount == $object->amount) && (ref $self eq ref $object));
     return 0;
+}
+
+method dollar (Int $amount) {
+    return Dollar->new( amount => $amount );
 }
 
 no Moose;
