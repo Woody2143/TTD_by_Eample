@@ -1,16 +1,13 @@
 #!/usr/bin/env perl
 
 use Modern::Perl;
-use Test::More tests => 6;
+use Test::More tests => 4;
 
-use_ok('Money');
 use_ok('Dollar');
 
 {
     
-    my $five = Money->dollar(5);
-    is($five->amount, 5, '$five->amount equals 5');
-    isa_ok($five, 'Dollar');
+    my $five = new_ok( Dollar => [ amount => 5 ], 'Dollar');
     
     is_deeply($five->times(2), Dollar->new( amount => 10 ), 'product->times(2) equals Dollar obj 10');
     

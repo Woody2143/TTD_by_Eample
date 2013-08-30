@@ -2,7 +2,6 @@ package Dollar;
 use Modern::Perl;
 use Moose;
 use MooseX::Method::Signatures;
-use MooseX::Privacy;
 
 extends 'Money';
 

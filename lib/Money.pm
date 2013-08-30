@@ -14,10 +14,6 @@ method equals (Money $object) {
     return 0;
 }
 
-method dollar (Int $amount) {
-    return Dollar->new( amount => $amount );
-}
-
 no Moose;
 __PACKAGE__->meta->make_immutable;
 
