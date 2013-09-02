@@ -14,6 +14,13 @@ method equals (Money $object) {
     return 0;
 }
 
+sub Dollar {
+    my $self = shift;
+    my ($amount) = @_;
+    require Dollar;
+    return Dollar->new( amount => $amount );
+}
+
 no Moose;
 __PACKAGE__->meta->make_immutable;
 
