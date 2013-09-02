@@ -5,6 +5,7 @@ use Test::More tests => 9;
 
 use_ok('Money');
 use_ok('Dollar');
+use_ok('Franc');
 
 {
     my $five = new_ok( Dollar => [ amount => 5 ], 'Dollar');
@@ -14,11 +15,10 @@ use_ok('Dollar');
     is_deeply($five->times(3), Money->Dollar(15), 'product->times(3) equals Dollar obj 15');
 }
 
-use_ok('Franc');
 {
     my $five = new_ok( Franc => [ amount => 5 ], 'Franc');
     
-    is_deeply($five->times(2), Franc->new( amount => 10 ), 'product->times(2) equals Franc obj 10');
+    is_deeply($five->times(2), Money->Franc(10 ), 'product->times(2) equals Franc obj 10');
     
-    is_deeply($five->times(3), Franc->new( amount => 15 ), 'product->times(3) equals Franc obj 15');
+    is_deeply($five->times(3), Money->Franc(15), 'product->times(3) equals Franc obj 15');
 }

@@ -21,6 +21,13 @@ sub Dollar {
     return Dollar->new( amount => $amount );
 }
 
+sub Franc {
+    my $self = shift;
+    my ($amount) = @_;
+    require Franc;
+    return Franc->new( amount => $amount );
+}
+
 no Moose;
 __PACKAGE__->meta->make_immutable;
 
