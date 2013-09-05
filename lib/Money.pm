@@ -17,13 +17,15 @@ method equals (Money $object) {
 sub Dollar {
     my $self = shift;
     my ($amount) = @_;
-    require Dollar;
+    use Dollar;
+    #require Dollar;
     return Dollar->new( amount => $amount );
 }
 
 sub Franc {
     my $self = shift;
     my ($amount) = @_;
+    #use Franc;
     require Franc;
     return Franc->new( amount => $amount );
 }
